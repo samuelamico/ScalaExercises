@@ -1,5 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m[watch] [module1 / Compile / run] Found inputs: C:\Users\samfs\Desktop\Scala\Part1 - Udemy\Module1\module1\*.{java,scala},C:\Users\samfs\Desktop\Scala\Part1 - Udemy\Module1\module1\src\main\java\**\*.{java,scala},C:\Users\samfs\Desktop\Scala\Part1 - Udemy\Module1\module1\src\main\resources\**\*,C:\Users\samfs\Desktop\Scala\Part1 - Udemy\Module1\module1\src\main\scala\**\*.{java,scala},C:\Users\samfs\Desktop\Scala\Part1 - Udemy\Module1\module1\src\main\scala-2.13\**\*.{java,scala}[0m
-[0m[[0m[0minfo[0m] [0m[0m1. Monitoring source files for module1/run...[0m
-[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
-[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received input event: Run().[0m
-[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received input event: Run().[0m
