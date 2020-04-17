@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercises-applied-1.iml" filepath="$PROJECT_DIR$/.idea/modules/exercises-applied-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercises-applied-1-build.iml" filepath="$PROJECT_DIR$/.idea/modules/exercises-applied-1-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module2/module2.iml" filepath="$PROJECT_DIR$/module2/module2.iml" />
     </modules>
   </component>
 </project>

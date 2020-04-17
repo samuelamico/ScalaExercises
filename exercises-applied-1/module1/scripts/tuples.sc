@@ -11,3 +11,9 @@ val (soma,subtr) = add_subrt(x,y)
 
 print(soma,subtr)
 
+
+// Map over array
+val st = Array("ola","oi")
+
+val up = st.map(_ + 'a')
+print(up)
