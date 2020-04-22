@@ -36,6 +36,19 @@ object ListConcat extends ListConcateRef{
     recur(vect)
   }
 
+  //==================================================\\
+
+  // P04
+  // Find the number of elements of a list.
+  def length[A](vect: List[A]): Int = {
+    def rec[A](n: Int, x: List[A]): Int = (x) match {
+      case Nil => n
+      case head :: tail => rec(n+1,tail)
+    }
+    rec(0,vect)
+  }
+
+
 
 
 }

@@ -16,4 +16,12 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the 6th value of a List" in {
       ListConcat.nth(5,List(1, 2, 3, 4, 5, 6)) shouldEqual(6)
     }
+
+    it should "Return the length of a List" in {
+      ListConcat.length(List(1, 2, 3, 4, 5)) shouldEqual(5)
+    }
+
+    it should "Return the length of a List array" in {
+      ListConcat.length(List("hello","array")) shouldEqual(2)
+    }
 }

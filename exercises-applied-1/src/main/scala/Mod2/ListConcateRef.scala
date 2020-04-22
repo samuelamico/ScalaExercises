@@ -8,4 +8,5 @@ package Mod2
 trait ListConcateRef {
   def concatelist(x: String, y: String, z: String): String
   def nth[A](n: Int, vect: List[A]): A
+  def length[A](vect: List[A]): Int
 }
