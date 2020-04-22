@@ -24,4 +24,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the length of a List array" in {
       ListConcat.length(List("hello","array")) shouldEqual(2)
     }
+
+    it should "Return the reverse of a List array" in {
+      ListConcat.reverse(List("hello","array")) shouldEqual(List("array","hello"))
+    }
 }
