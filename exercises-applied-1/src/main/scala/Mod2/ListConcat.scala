@@ -47,7 +47,10 @@ object ListConcat extends ListConcateRef{
     }
     rec(0,vect)
   }
+  //==================================================\\
 
+  // P05
+  // Reverse a list.
   def reverse[A](vec: List[A]): List[A] = {
     def recursive[A](target: List[A], goal: List[A]): List[A] = (target,goal) match {
       case (Nil,_) => goal
