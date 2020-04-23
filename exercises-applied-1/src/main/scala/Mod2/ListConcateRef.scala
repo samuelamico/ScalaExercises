@@ -12,4 +12,5 @@ trait ListConcateRef {
   def reverse[A](vec: List[A]): List[A]
   def isPalindrome[A](vec: List[A]): Boolean
   def flatten(ls: List[Any]): List[Any]
+  def compress[A](vec: List[A]): List[A]
 }

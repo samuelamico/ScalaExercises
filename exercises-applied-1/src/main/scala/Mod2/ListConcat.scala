@@ -78,5 +78,12 @@ object ListConcat extends ListConcateRef{
     case e => List(e)
   }
 
+  def compress[A](vec: List[A]): List[A] = {
+    def recursive[A](target: List[A], goal: List[A]): List[A] = (target) match {
+      case (head :: tail) => recursive(tail.dropWhile(_ == head), head :: goal)
+      case Nil => goal.reverse
+    }
+    recursive(vec,Nil)
+  }
 
 }
