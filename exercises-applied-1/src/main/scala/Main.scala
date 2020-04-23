@@ -5,5 +5,7 @@ object Main extends App{
 
   //println(Mod2.ListConcat.length(List(1,2,3,4)))
 
-  println(Mod2.ListConcat.reverse(List(1,2,3,4,5)))
+  //println(Mod2.ListConcat.reverse(List(1,2,3,4,5)))
+
+  println(Mod2.ListConcat.flatten(List(5,List(1,2))))
 }

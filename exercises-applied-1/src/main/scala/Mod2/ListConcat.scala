@@ -72,8 +72,11 @@ object ListConcat extends ListConcateRef{
     }
   }
 
-  def flatten[A](vec: List[A]): List[A] = {
-    
+
+  def flatten(ls: List[Any]): List[Any] = ls flatMap {
+    case ms: List[_] => flatten(ms)
+    case e => List(e)
   }
+
 
 }

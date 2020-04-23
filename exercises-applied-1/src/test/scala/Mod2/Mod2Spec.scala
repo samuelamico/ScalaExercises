@@ -36,4 +36,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return false if is not a Palidrome" in {
       ListConcat.isPalindrome(List(1,2,3,1)) shouldEqual false
     }
+
+    it should "Return flatten" in {
+      ListConcat.flatten(List(1,2,3,List(4,5,6))) shouldEqual List(1,2,3,4,5,6)
+    }
 }
