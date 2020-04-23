@@ -10,4 +10,5 @@ trait ListConcateRef {
   def nth[A](n: Int, vect: List[A]): A
   def length[A](vect: List[A]): Int
   def reverse[A](vec: List[A]): List[A]
+  def isPalindrome[A](vec: List[A]): Boolean
 }

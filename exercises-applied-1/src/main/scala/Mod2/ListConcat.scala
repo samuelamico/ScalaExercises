@@ -60,5 +60,20 @@ object ListConcat extends ListConcateRef{
     else recursive(vec,Nil)
   }
 
+  def isPalindrome[A](vec: List[A]): Boolean = {
+    def recursive[A](target: List[A], goal: List[A]): List[A] = (target,goal) match {
+      case (Nil,_) => goal
+      case (head :: tail,goal) => recursive(tail, head :: goal)
+    }
+    if(vec.isEmpty) throw new NoSuchElementException
+    else{
+      if (recursive(vec,Nil) == vec) true
+      else false
+    }
+  }
+
+  def flatten[A](vec: List[A]): List[A] = {
+    
+  }
 
 }

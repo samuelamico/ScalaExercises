@@ -28,4 +28,12 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the reverse of a List array" in {
       ListConcat.reverse(List("hello","array")) shouldEqual(List("array","hello"))
     }
+
+    it should "Return true if is a Palidrome" in {
+      ListConcat.isPalindrome(List(1,2,3,2,1)) shouldEqual true
+    }
+
+    it should "Return false if is not a Palidrome" in {
+      ListConcat.isPalindrome(List(1,2,3,1)) shouldEqual false
+    }
 }
