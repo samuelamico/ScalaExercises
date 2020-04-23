@@ -60,6 +60,10 @@ object ListConcat extends ListConcateRef{
     else recursive(vec,Nil)
   }
 
+  //==================================================\\
+
+  // P06
+  // Palidrome.
   def isPalindrome[A](vec: List[A]): Boolean = {
     def recursive[A](target: List[A], goal: List[A]): List[A] = (target,goal) match {
       case (Nil,_) => goal
@@ -72,12 +76,18 @@ object ListConcat extends ListConcateRef{
     }
   }
 
+  //==================================================\\
 
+  // P07
+  // flatten a List.
   def flatten(ls: List[Any]): List[Any] = ls flatMap {
     case ms: List[_] => flatten(ms)
     case e => List(e)
   }
+  //==================================================\\
 
+  // P08
+  // Compress.
   def compress[A](vec: List[A]): List[A] = {
     def recursive[A](target: List[A], goal: List[A]): List[A] = (target) match {
       case (head :: tail) => recursive(tail.dropWhile(_ == head), head :: goal)
