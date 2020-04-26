@@ -44,4 +44,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return Pack" in {
       ListConcat.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
     }
+
+    it should "Return One root" in {
+
+    }
 }

@@ -9,5 +9,7 @@ object Main extends App{
 
   //println(Mod2.ListConcat.flatten(List(5,List(1,2))))
 
-  println(Mod2.ListConcat.compress(List(5,5,3,1,2)))
+  //println(Mod2.ListConcat.compress(List(5,5,3,1,2)))
+
+  PureFunctions.FunPure.baskara(2.0,3.0,4.0)
 }
