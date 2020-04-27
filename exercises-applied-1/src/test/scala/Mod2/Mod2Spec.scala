@@ -45,7 +45,7 @@ class Mod2Spec extends FlatSpec with Matchers{
       ListConcat.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
     }
 
-    it should "Return One root" in {
-
+    it should "Return Duplicate value in List" in {
+        ListConcat.duplicate(List('a','b','c')) shouldEqual(List('a','a','b','b','c','c'))
     }
 }

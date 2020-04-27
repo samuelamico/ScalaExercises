@@ -110,8 +110,8 @@ object ListConcat extends ListConcateRef{
   //  Duplicate the elements of a list..
   def duplicate [A](vect: List[A]): List[A] = {
     def recursive[A](target: List[A], goal: List[A]): List[A] = (target) match{
-      case Nil => goal
-      case (head :: tail) => (tail,head :: head :: goal)
+      case Nil => goal.reverse
+      case (head :: tail) => recursive(tail,head :: head :: goal)
     }
     recursive(vect,Nil)
   }
