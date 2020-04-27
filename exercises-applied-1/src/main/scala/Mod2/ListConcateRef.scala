@@ -15,4 +15,5 @@ trait ListConcateRef {
   def compress[A](vec: List[A]): List[A]
   def pack[A](ls: List[A]): List[List[A]]
   def duplicate [A](vect: List[A]): List[A]
+  def duplicateN [A](n: Int, vect: List[A]): List[A]
 }

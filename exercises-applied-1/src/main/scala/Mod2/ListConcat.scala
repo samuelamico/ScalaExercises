@@ -116,5 +116,19 @@ object ListConcat extends ListConcateRef{
     recursive(vect,Nil)
   }
 
+  //==================================================\\
 
+  // P14
+  //  Duplicate the elements of a list..
+  def duplicateN [A](n: Int, vect: List[A]): List[A] = {
+    def recursive[A](cont: Int, target: List[A], goal: List[A]): List[A] = {
+      if(target.isEmpty){
+        goal.reverse
+      }else{
+        if(cont == n) recursive(0,target.tail,goal)
+        else recursive(cont+1,target,target.head :: goal)
+      }
+    }
+    recursive(0,vect,Nil)
+  }
 }
