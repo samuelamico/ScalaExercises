@@ -104,5 +104,17 @@ object ListConcat extends ListConcateRef{
       else packed :: pack(next)
     }
   }
+  //==================================================\\
+
+  // P14
+  //  Duplicate the elements of a list..
+  def duplicate [A](vect: List[A]): List[A] = {
+    def recursive[A](target: List[A], goal: List[A]): List[A] = (target) match{
+      case Nil => goal
+      case (head :: tail) => (tail,head :: head :: goal)
+    }
+    recursive(vect,Nil)
+  }
+
 
 }
