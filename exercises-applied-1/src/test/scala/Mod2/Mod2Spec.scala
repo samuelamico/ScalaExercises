@@ -52,4 +52,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return n * each value in List" in {
       ListConcat.duplicateN(2,List('a','b','c')) shouldEqual(List('a','a','b','b','c','c'))
     }
+
+    it should "Return List encoding" in {
+      ListConcat.encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual(List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e)))
+    }
 }

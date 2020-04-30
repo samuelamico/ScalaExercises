@@ -131,4 +131,8 @@ object ListConcat extends ListConcateRef{
     }
     recursive(0,vect,Nil)
   }
+
+
+  def encode[A](ls: List[A]): List[(Int, A)] =
+    pack(ls) map { e => (e.length, e.head) }
 }
