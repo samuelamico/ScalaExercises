@@ -19,5 +19,42 @@ object FunPure extends FunctionsRef{
     }
   }
 
+  def nth(x: List[Int],n: Int): Int = {
+    def recursive(cont: Int, target: List[Int]): Int = {
+      if (target.isEmpty) cont
+      else if (target.head == n) recursive(cont+1,target.tail)
+      else recursive(cont,target.tail)
+    }
+
+    recursive(0,x)
+  }
+
+  def sum(x: Int, y: Int): Int = {
+    def succ(i:Int):Int = i+1
+    def pred(i:Int):Int = i-1
+
+    if (y == 0) x
+    else sum(succ(x),pred(y))
+  }
+
+  def mult(x: Int,  y: Int): Int = {
+    def recur(cnt: Int, result: Int): Int = {
+      print(cnt,result)
+      if (cnt == 1) result
+      else recur (cnt - 1, sum (result, x) )
+    }
+    recur(y,x)
+  }
+
+  def exp(x: Int, y: Int): Int = {
+    def recur(cnt: Int, result: Int): Int = {
+      print(cnt,result)
+      if (cnt == 1) result
+      else recur (cnt - 1, mult (result, x) )
+    }
+    recur(y,x)
+  }
+
+
 
 }

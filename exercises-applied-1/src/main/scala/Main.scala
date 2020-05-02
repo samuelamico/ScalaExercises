@@ -11,5 +11,5 @@ object Main extends App{
 
   //println(Mod2.ListConcat.compress(List(5,5,3,1,2)))
 
-  PureFunctions.FunPure.baskara(2.0,3.0,4.0)
+  println(PureFunctions.FunPure.nth(List(2,3,4,3,2,1),3))
 }

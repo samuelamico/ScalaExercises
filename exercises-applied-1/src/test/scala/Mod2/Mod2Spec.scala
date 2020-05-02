@@ -1,6 +1,8 @@
 package Mod2
 
+
 import Mod2.ListConcat
+import PureFunctions.FunPure
 import org.scalatest.{FlatSpec, Matchers}
 
 class Mod2Spec extends FlatSpec with Matchers{
@@ -56,4 +58,20 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return List encoding" in {
       ListConcat.encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual(List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e)))
     }
+
+    it should "Return how may nth elements found in the list" in {
+      FunPure.nth(List(2,3,4,3,2,1),3) shouldEqual(2)
+    }
+
+    it should "Return the sum" in {
+      FunPure.sum(4,6) shouldEqual(10)
+    }
+
+  it should "Return the mult" in {
+    FunPure.mult(4,6) shouldEqual(24)
+  }
+
+  it should "Return the exp" in {
+    FunPure.exp(4,4) shouldEqual(256)
+  }
 }
