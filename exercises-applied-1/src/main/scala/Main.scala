@@ -16,4 +16,10 @@ object Main extends App{
   //println(PureFunctions.FunPure.nth(List(2,3,4,3,2,1),3))
   val k = Complex(1,2)
   println(k)
+
+  val j = Complex(1)
+  println(j)
+
+  println(j + k)
+  println(k + 2)
 }
