@@ -1,6 +1,7 @@
 package Mod2
 
 
+import Complex.Complex
 import Mod2.ListConcat
 import PureFunctions.FunPure
 import org.scalatest.{FlatSpec, Matchers}
@@ -74,4 +75,9 @@ class Mod2Spec extends FlatSpec with Matchers{
   it should "Return the exp" in {
     FunPure.exp(4,4) shouldEqual(256)
   }
+
+  it should "Return the sum of Complex" in {
+    Complex(1,2).toString shouldEqual("1.0 + 2.0i")
+  }
+
 }
