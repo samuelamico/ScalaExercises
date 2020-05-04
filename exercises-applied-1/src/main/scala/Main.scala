@@ -22,4 +22,8 @@ object Main extends App{
 
   println(j + k)
   println(k + 2)
+
+  println(j*j)
+
+  println(j/k)
 }
