@@ -1,3 +1,5 @@
+import Complex.Complex
+
 object Main extends App{
   //println(Mod2.ListConcat.concatelist("Hello",", ","World") )
 
@@ -11,5 +13,7 @@ object Main extends App{
 
   //println(Mod2.ListConcat.compress(List(5,5,3,1,2)))
 
-  println(PureFunctions.FunPure.nth(List(2,3,4,3,2,1),3))
+  //println(PureFunctions.FunPure.nth(List(2,3,4,3,2,1),3))
+  val k = Complex(1,2)
+  println(k)
 }
