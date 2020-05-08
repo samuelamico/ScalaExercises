@@ -131,7 +131,18 @@ object ListConcat extends ListConcateRef{
     }
     recursive(0,vect,Nil)
   }
+  //==================================================\\
 
+  // P14
+  //  Duplicate the elements of a list..
+  def dropTailRecursive[A](n: Int, ls: List[A]): List[A] = {
+    def dropR(c: Int, curList: List[A], result: List[A]): List[A] = (c, curList) match {
+      case (_, Nil)       => result.reverse
+      case (1, _ :: tail) => dropR(n, tail, result)
+      case (_, h :: tail) => dropR(c - 1, tail, h :: result)
+    }
+    dropR(n, ls, Nil)
+  }
 
   def encode[A](ls: List[A]): List[(Int, A)] =
     pack(ls) map { e => (e.length, e.head) }
