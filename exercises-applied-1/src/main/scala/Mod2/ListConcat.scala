@@ -133,7 +133,7 @@ object ListConcat extends ListConcateRef{
   }
   //==================================================\\
 
-  // P14
+  // P16
   //  Duplicate the elements of a list..
   def dropTailRecursive[A](n: Int, ls: List[A]): List[A] = {
     def dropR(c: Int, curList: List[A], result: List[A]): List[A] = (c, curList) match {
@@ -146,4 +146,17 @@ object ListConcat extends ListConcateRef{
 
   def encode[A](ls: List[A]): List[(Int, A)] =
     pack(ls) map { e => (e.length, e.head) }
+
+
+  //==================================================\\
+
+  // P18
+  //  Extract a slice from a list.
+  def slice[T](i: Int, k: Int, vetor: List[T]): List[T] = {
+    if(i > vetor.size || k > vetor.size || i > k) throw new IllegalArgumentException
+    else if(i > 0) slice(i-1,k-1,vetor.tail)
+    else if(k > 0) slice(i,k-1,(vetor.reverse.tail).reverse)
+    else vetor
+  }
+
 }
