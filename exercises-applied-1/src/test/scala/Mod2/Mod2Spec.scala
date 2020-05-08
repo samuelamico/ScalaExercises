@@ -80,4 +80,9 @@ class Mod2Spec extends FlatSpec with Matchers{
     Complex(1,2).toString shouldEqual("1.0 + 2.0i")
   }
 
+  it should "Return the Slice of List" in {
+    ListConcat.slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual(List('d, 'e, 'f, 'g))
+  }
+
+
 }
