@@ -14,19 +14,21 @@ object Main extends App{
   //println(Mod2.ListConcat.compress(List(5,5,3,1,2)))
 
   //println(PureFunctions.FunPure.nth(List(2,3,4,3,2,1),3))
-  val k = Complex(1,2)
-  println(k)
+  //val k = Complex(1,2)
+  //println(k)
 
-  val j = Complex(1)
-  println(j)
+  //val j = Complex(1)
+  //println(j)
 
-  println(j + k)
-  println(k + 2)
+  //println(j + k)
+  //println(k + 2)
 
-  println(j*j)
+  //println(j*j)
 
-  println(j/k)
+  //println(j/k)
 
 
-  println(Mod2.ListConcat.slice(6, 4, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
+  //println(Mod2.ListConcat.slice(6, 4, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
+
+  println(Mod2.ListConcat.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)))
 }

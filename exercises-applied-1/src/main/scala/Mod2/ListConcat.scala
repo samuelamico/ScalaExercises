@@ -96,7 +96,7 @@ object ListConcat extends ListConcateRef{
     recursive(vec,Nil)
   }
 
-  def pack[A](ls: List[A]): List[List[A]] = {
+  /* def pack[A](ls: List[A]): List[List[A]] = {
     if (ls.isEmpty) List(List())
     else {
       val (packed, next) = ls span { _ == ls.head }
@@ -104,6 +104,7 @@ object ListConcat extends ListConcateRef{
       else packed :: pack(next)
     }
   }
+   */
   //==================================================\\
 
   // P14
@@ -164,6 +165,11 @@ object ListConcat extends ListConcateRef{
 
   // P09
   //  Pack consecutive duplicates of list elements into sublists.
+  def removelemnt[T](lista: List[T],elem: T,goal: List[T]): List[T] = {
+    if(lista.isEmpty) goal
+    else if(lista.head == elem) removelemnt(lista.tail,elem,goal)
+    else removelemnt(lista.tail,elem,lista.head :: goal)
+  }
   def findhead[T](elem: T,target: List[T], goal: List[T]): List[T] = {
       if(target.isEmpty) elem :: goal
       else if(elem == target.head) findhead(elem,target.tail,target.head :: goal)
@@ -171,7 +177,7 @@ object ListConcat extends ListConcateRef{
   }
   def pack[T](vect: List[T]): List[List[T]] = (vect) match {
     case Nil => Nil
-    case head :: tail => findhead(head,tail,Nil) :: pack(tail)
+    case head :: tail => findhead(head,tail,Nil) :: pack(removelemnt(tail,head,Nil))
   }
 
 }
