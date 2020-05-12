@@ -159,4 +159,19 @@ object ListConcat extends ListConcateRef{
     else vetor
   }
 
+
+  //==================================================\\
+
+  // P09
+  //  Pack consecutive duplicates of list elements into sublists.
+  def findhead[T](elem: T,target: List[T], goal: List[T]): List[T] = {
+      if(target.isEmpty) elem :: goal
+      else if(elem == target.head) findhead(elem,target.tail,target.head :: goal)
+      else findhead(elem,target.tail,goal)
+  }
+  def pack[T](vect: List[T]): List[List[T]] = (vect) match {
+    case Nil => Nil
+    case head :: tail => findhead(head,tail,Nil) :: pack(tail)
+  }
+
 }
