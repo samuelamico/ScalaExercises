@@ -44,9 +44,7 @@ class Mod2Spec extends FlatSpec with Matchers{
       ListConcat.flatten(List(1,2,3,List(4,5,6))) shouldEqual List(1,2,3,4,5,6)
     }
 
-    it should "Return Pack" in {
-      ListConcat.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
-    }
+
 
     it should "Return Duplicate value in List" in {
         ListConcat.duplicate(List('a','b','c')) shouldEqual(List('a','a','b','b','c','c'))
@@ -56,9 +54,6 @@ class Mod2Spec extends FlatSpec with Matchers{
       ListConcat.duplicateN(2,List('a','b','c')) shouldEqual(List('a','a','b','b','c','c'))
     }
 
-    it should "Return List encoding" in {
-      ListConcat.encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) shouldEqual(List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e)))
-    }
 
     it should "Return how may nth elements found in the list" in {
       FunPure.nth(List(2,3,4,3,2,1),3) shouldEqual(2)
@@ -68,22 +63,24 @@ class Mod2Spec extends FlatSpec with Matchers{
       FunPure.sum(4,6) shouldEqual(10)
     }
 
-  it should "Return the mult" in {
-    FunPure.mult(4,6) shouldEqual(24)
-  }
+    it should "Return the mult" in {
+      FunPure.mult(4,6) shouldEqual(24)
+    }
 
-  it should "Return the exp" in {
-    FunPure.exp(4,4) shouldEqual(256)
-  }
+    it should "Return the exp" in {
+      FunPure.exp(4,4) shouldEqual(256)
+    }
 
-  it should "Return the sum of Complex" in {
-    Complex(1,2).toString shouldEqual("1.0 + 2.0i")
-  }
+    it should "Return the sum of Complex" in {
+      Complex(1,2).toString shouldEqual("1.0 + 2.0i")
+    }
 
-  it should "Return the Slice of List" in {
-    ListConcat.slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual(List('d, 'e, 'f, 'g))
-  }
+    it should "Return the Slice of List" in {
+      ListConcat.slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual(List('d, 'e, 'f, 'g))
+    }
 
-
+    it should "Return the Concate of List" in {
+      ListConcat.concateList(List(1,2,3),List(4,5,6)) shouldEqual(List(1,2,3,4,5,6))
+    }
 
 }

@@ -180,4 +180,12 @@ object ListConcat extends ListConcateRef{
     case head :: tail => findhead(head,tail,Nil) :: pack(removelemnt(tail,head,Nil))
   }
 
+  //==================================================\\
+  // Concate List
+  def concateList[T](xs: List[T],ys: List[T]): List[T] = xs match {
+    case Nil => ys
+    case h :: t => h :: concateList(t,ys)
+  }
+
+
 }
