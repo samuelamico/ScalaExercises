@@ -187,5 +187,10 @@ object ListConcat extends ListConcateRef{
     case h :: t => h :: concateList(t,ys)
   }
 
-
+  //==================================================\\
+  // Reverse List
+  def reverseList[T](xs: List[T]): List[T] = xs match {
+    case Nil => xs
+    case h :: tail => reverseList(tail) ++ List(h)
+  }
 }
