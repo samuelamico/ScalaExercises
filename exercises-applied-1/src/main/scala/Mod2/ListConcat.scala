@@ -193,4 +193,10 @@ object ListConcat extends ListConcateRef{
     case Nil => xs
     case h :: tail => reverseList(tail) ++ List(h)
   }
+
+  //==================================================\\
+  // Remove
+  def removeElemt[T](xs: List[T], n: Int): List[T] = (xs.take(n)) ++ (xs.drop(n+1))
+
+
 }

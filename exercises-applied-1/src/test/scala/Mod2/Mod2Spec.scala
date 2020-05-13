@@ -87,4 +87,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the reverse differente maner of List" in {
       ListConcat.reverseList(List(1,2,3,4)) shouldEqual(List(4,3,2,1))
     }
+
+    it should "Return the drop element of List" in {
+      ListConcat.removeElemt(List("a","b","c","d"),1) shouldEqual(List("a","c","d"))
+    }
 }
