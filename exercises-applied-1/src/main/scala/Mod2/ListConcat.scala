@@ -145,9 +145,6 @@ object ListConcat extends ListConcateRef{
     dropR(n, ls, Nil)
   }
 
-  def encode[A](ls: List[A]): List[(Int, A)] =
-    pack(ls) map { e => (e.length, e.head) }
-
 
   //==================================================\\
 
@@ -164,7 +161,7 @@ object ListConcat extends ListConcateRef{
   //==================================================\\
 
   // P09
-  //  Pack consecutive duplicates of list elements into sublists.
+  //  Pack list elements into sublists.
   def removelemnt[T](lista: List[T],elem: T,goal: List[T]): List[T] = {
     if(lista.isEmpty) goal
     else if(lista.head == elem) removelemnt(lista.tail,elem,goal)
@@ -198,5 +195,24 @@ object ListConcat extends ListConcateRef{
   // Remove
   def removeElemt[T](xs: List[T], n: Int): List[T] = (xs.take(n)) ++ (xs.drop(n+1))
 
+  //==================================================\\
+
+  // P09**
+  //  Pack consecutive duplicates of list elements into sublists.
+  def packConsecutive[T](xs: List[T]): List[List[T]] = xs match{
+    case Nil => Nil
+    case h :: t =>
+      val (first,other) = xs.span(x => x == h)
+      first :: packConsecutive(other)
+  }
+
+  def encode[T](xs: List[T]): List[(Int,T)] = {
+      pack(xs).map(x => (x.length,x.head))
+  }
+
+  def decode[T](lista: List[(Int, T)] ): List[T] = lista match {
+    case Nil => Nil
+    case x :: xs => List.fill(x._1)(x._2) ++ decode(xs)
+  }
 
 }

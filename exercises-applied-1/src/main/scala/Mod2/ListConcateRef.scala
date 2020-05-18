@@ -16,6 +16,6 @@ trait ListConcateRef {
   def pack[A](ls: List[A]): List[List[A]]
   def duplicate [A](vect: List[A]): List[A]
   def duplicateN [A](n: Int, vect: List[A]): List[A]
-  def encode[A](ls: List[A]): List[(Int, A)]
+  def encode[T](xs: List[T]): List[(Int,T)]
   def slice[T](i: Int, k: Int, vetor: List[T]): List[T]
 }

@@ -91,4 +91,20 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the drop element of List" in {
       ListConcat.removeElemt(List("a","b","c","d"),1) shouldEqual(List("a","c","d"))
     }
+
+    it should "Return the pack consecutive of List" in {
+      ListConcat.packConsecutive(List("a","a","a","b","c","c","a")) shouldEqual(List(List("a","a","a"),List("b"),List("c","c"),List("a")))
+    }
+
+    //it should "Return the encode consecutive of List" in {
+     // ListConcat.encode(List("a","a","a","b","c","c","a")) shouldEqual(List((3,"a"),(1,"b"),(2,"c"),(1,"a")))
+    //}
+
+    it should "Return the encode consecutive of List" in {
+      ListConcat.encode(List("a","a","a","b","c","c","a")) shouldEqual(List((4,"a"),(2,"c"),(1,"b")))
+    }
+
+    it should "Return the encode consecutive of List" in {
+      ListConcat.encode(List("a","a","a","b","c","c","a")) shouldEqual(List((4,"a"),(2,"c"),(1,"b")))
+    }
 }
