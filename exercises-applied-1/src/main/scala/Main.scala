@@ -30,5 +30,7 @@ object Main extends App{
 
   //println(Mod2.ListConcat.slice(6, 4, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
 
-  println(Mod2.ListConcat.pack(List("a","b","c")))
+  //println(Mod2.ListConcat.pack(List("a","b","c")))
+
+  println(Mod2.ListConcat.split(3,List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
 }

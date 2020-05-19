@@ -109,4 +109,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the decode of consecutive of List" in {
       ListConcat.decode(List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))) shouldEqual(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     }
+
+    it should "Return the split of List" in {
+      ListConcat.split(3,List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+    }
 }

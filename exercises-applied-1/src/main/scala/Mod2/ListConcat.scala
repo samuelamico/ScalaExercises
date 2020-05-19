@@ -1,5 +1,5 @@
 package Mod2
-
+import scala.annotation.tailrec
 object ListConcat extends ListConcateRef{
 
   def concatelist(x: String, y: String, z: String): String = {
@@ -213,6 +213,20 @@ object ListConcat extends ListConcateRef{
   def decode[T](lista: List[(Int, T)] ): List[T] = lista match {
     case Nil => Nil
     case x :: xs => List.fill(x._1)(x._2) ++ decode(xs)
+  }
+
+  //==================================================\\
+
+  // P17
+  //  Split a List
+  def split[T](n: Int,lista: List[T]): (List[T], List[T]) = {
+    @tailrec
+    def splitWithAcumulator[T](m: Int, lista: List[T], ListAcum: List[T]): (List[T], List[T]) = (lista,m) match {
+      case (Nil,_) => (Nil,Nil)
+      case (_,0) => (ListAcum.reverse,lista)
+      case (x::xs,_) => splitWithAcumulator(m-1,xs,x::ListAcum)
+    }
+    splitWithAcumulator(n,lista,Nil)
   }
 
 }
