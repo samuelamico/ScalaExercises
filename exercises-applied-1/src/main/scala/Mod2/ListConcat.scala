@@ -228,5 +228,14 @@ object ListConcat extends ListConcateRef{
     }
     splitWithAcumulator(n,lista,Nil)
   }
+  //==================================================\\
+
+  // P20
+  //  Remove at and create a new list
+  def removeAt[T](n: Int,lista: List[T]): (List[T],T) = {
+      if (n > lista.length || n <= 0) throw new IllegalArgumentException
+      else (lista.take(n):::lista.takeRight(lista.length - n - 1),lista(n))
+  }
+
 
 }
