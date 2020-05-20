@@ -113,4 +113,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the split of List" in {
       ListConcat.split(3,List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) shouldEqual((List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
     }
+
+    it should "Return the split adn RemoveAt of List" in {
+      ListConcat.removeAt(1,List("a", "b", "c", "d")) shouldEqual(List("a", "c", "d"),"b")
+    }
 }
