@@ -240,9 +240,9 @@ object ListConcat extends ListConcateRef{
 
   // P21
   // Insert an element at a given position into a list.
-  def insertAt(charc: Int,n: Int,lista: List[Int]): List[Int] = {
+  def insertAt[T](charc: T,n: Int,lista: List[T]): List[Any] = {
     @tailrec
-    def recurAt(c: Int, targ: List[Int], goal: List[Int]): List[Int] = (targ,c) match {
+    def recurAt[T](c: Int, targ: List[T], goal: List[T]): List[Any] = (targ,c) match {
       case (Nil,_) => goal.reverse
       case (x::xs,b) if(b==n) => recurAt(c+1,xs,x :: charc :: goal)
       case (x::xs,_) => recurAt(c+1,xs,x::goal)

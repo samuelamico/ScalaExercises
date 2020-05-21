@@ -117,4 +117,8 @@ class Mod2Spec extends FlatSpec with Matchers{
     it should "Return the split adn RemoveAt of List" in {
       ListConcat.removeAt(1,List("a", "b", "c", "d")) shouldEqual(List("a", "c", "d"),"b")
     }
+
+    it should "Insert an Int in a  List" in {
+      ListConcat.insertAt(2, 1, List(1,3,4,5)) shouldEqual(List(1, 2, 3, 4, 5))
+    }
 }
