@@ -231,11 +231,24 @@ object ListConcat extends ListConcateRef{
   //==================================================\\
 
   // P20
-  //  Remove at and create a new list
+  //  Insert an element at a given position into a list.
   def removeAt[T](n: Int,lista: List[T]): (List[T],T) = {
       if (n > lista.length || n <= 0) throw new IllegalArgumentException
       else (lista.take(n):::lista.takeRight(lista.length - n - 1),lista(n))
   }
+  //==================================================\\
 
+  // P21
+  // Insert an element at a given position into a list.
+  def insertAt(charc: Int,n: Int,lista: List[Int]): List[Int] = {
+    @tailrec
+    def recurAt(c: Int, targ: List[Int], goal: List[Int]): List[Int] = (targ,c) match {
+      case (Nil,_) => goal.reverse
+      case (x::xs,b) if(b==n) => recurAt(c+1,xs,x :: charc :: goal)
+      case (x::xs,_) => recurAt(c+1,xs,x::goal)
+    }
+    if (n > lista.length || n <= 0) throw new IllegalArgumentException
+    else recurAt(0,lista,Nil)
+  }
 
 }
