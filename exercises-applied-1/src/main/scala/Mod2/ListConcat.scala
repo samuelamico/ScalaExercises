@@ -250,5 +250,17 @@ object ListConcat extends ListConcateRef{
     if (n > lista.length || n <= 0) throw new IllegalArgumentException
     else recurAt(0,lista,Nil)
   }
+  //==================================================\\
+
+  // P22
+  // Create a list containing all integers within a given range..
+  def rangeList(a:Int,b:Int): List[Int] = {
+    def recurRange(c:Int,goal: List[Int]): List[Int] = (c) match {
+      case x if(c > (b-a)) => goal.reverse
+      case _ => recurRange(c+1,(c+a) :: goal)
+    }
+    if(a > b) throw new IllegalArgumentException
+    else recurRange(0,Nil)
+  }
 
 }

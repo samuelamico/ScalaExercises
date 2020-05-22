@@ -21,4 +21,5 @@ trait ListConcateRef {
   def split[T](n: Int,lista: List[T]): (List[T], List[T])
   def removeAt[T](n: Int,lista: List[T]): (List[T],T)
   def insertAt[T](charc: T,n: Int,lista: List[T]): List[Any]
+  def rangeList(a:Int,b:Int): List[Int]
 }

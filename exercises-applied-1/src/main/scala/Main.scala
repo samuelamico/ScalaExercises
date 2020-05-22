@@ -34,5 +34,7 @@ object Main extends App{
 
   //println(Mod2.ListConcat.split(3,List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
 
-  println(Mod2.ListConcat.insertAt(2, 1, List(1,3,4,5)))
+  println(Mod2.ListConcat.rangeList(4,6))
+
+
 }
