@@ -22,4 +22,5 @@ trait ListConcateRef {
   def removeAt[T](n: Int,lista: List[T]): (List[T],T)
   def insertAt[T](charc: T,n: Int,lista: List[T]): List[Any]
   def rangeList(a:Int,b:Int): List[Int]
+  def randomSelect[T](n:Int,lista:List[T]): List[T]
 }

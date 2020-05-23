@@ -34,7 +34,9 @@ object Main extends App{
 
   //println(Mod2.ListConcat.split(3,List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
 
-  println(Mod2.ListConcat.rangeList(4,6))
+  //println(Mod2.ListConcat.rangeList(4,6))
+
+  println(Mod2.ListConcat.randomSelect(3,List(1,2,3,4,5,6)))
 
 
 }

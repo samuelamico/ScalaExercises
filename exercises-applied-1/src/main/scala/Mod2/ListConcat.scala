@@ -236,6 +236,7 @@ object ListConcat extends ListConcateRef{
       if (n > lista.length || n <= 0) throw new IllegalArgumentException
       else (lista.take(n):::lista.takeRight(lista.length - n - 1),lista(n))
   }
+
   //==================================================\\
 
   // P21
@@ -262,6 +263,16 @@ object ListConcat extends ListConcateRef{
     }
     if(a > b) throw new IllegalArgumentException
     else recurRange(0,Nil)
+  }
+
+  def randomSelect[T](n:Int,lista:List[T]): List[T] = (n,lista) match {
+    case (n,_) if(n > lista.length) => throw new IllegalArgumentException
+    case (n,_) if(n <= 0) => lista
+    case (_,_) => {
+      val indx = scala.util.Random
+      randomSelect(n-1,removeAt(indx.nextInt(lista.length),lista)._1)
+    }
+
   }
 
 }
