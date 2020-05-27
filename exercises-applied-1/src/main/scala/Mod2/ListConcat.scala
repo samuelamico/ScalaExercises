@@ -264,7 +264,10 @@ object ListConcat extends ListConcateRef{
     if(a > b) throw new IllegalArgumentException
     else recurRange(0,Nil)
   }
+  //==================================================\\
 
+  // P23
+  // Random List
   def randomSelect[T](n:Int,lista:List[T]): List[T] = (n,lista) match {
     case (n,_) if(n > lista.length) => throw new IllegalArgumentException
     case (n,_) if(n <= 0) => lista
@@ -272,7 +275,18 @@ object ListConcat extends ListConcateRef{
       val indx = scala.util.Random
       randomSelect(n-1,removeAt(indx.nextInt(lista.length),lista)._1)
     }
-
   }
+  //==================================================\\
+
+  // P24
+  // Create a list random number 1. to M , size N
+  def lotto(n: Int,M: Int): List[Int] = n match{
+    case 0 => Nil
+    case _ => {
+      val r = scala.util.Random
+      r.nextInt(M) :: lotto(n-1,M)
+    }
+  }
+
 
 }

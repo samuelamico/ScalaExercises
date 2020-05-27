@@ -36,7 +36,9 @@ object Main extends App{
 
   //println(Mod2.ListConcat.rangeList(4,6))
 
-  println(Mod2.ListConcat.randomSelect(3,List(1,2,3,4,5,6)))
+  //println(Mod2.ListConcat.randomSelect(3,List(1,2,3,4,5,6)))
+
+  println(Mod2.ListConcat.lotto(6,49))
 
 
 }

@@ -23,4 +23,5 @@ trait ListConcateRef {
   def insertAt[T](charc: T,n: Int,lista: List[T]): List[Any]
   def rangeList(a:Int,b:Int): List[Int]
   def randomSelect[T](n:Int,lista:List[T]): List[T]
+  def lotto(n: Int,M: Int): List[Int]
 }
