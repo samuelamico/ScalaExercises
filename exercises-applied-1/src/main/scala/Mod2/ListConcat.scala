@@ -296,4 +296,15 @@ object ListConcat extends ListConcateRef{
     case _ => Some(1 to (n-1) forall(x => (x%n) != 0))
   }
 
+  //==================================================\\
+
+  // P32
+  // M.D.C
+  def mdc(n: Int, m: Int): Option[Int] = (n,m) match {
+    case (n,m) if(n < 0 || m < 0) => None
+    case (n,m) if(m>n) => mdc(m,n)
+    case (x,y) if ( x%y ==0) => Some(y)
+    case (x,y)  => mdc(y,x%y)
+  }
+
 }

@@ -47,5 +47,10 @@ object Main extends App{
     case Some(i) => println(i)
   }
 
+  val result_mdc = Mod2.ListConcat.mdc(63,36) match {
+    case None => println("Number is not valid Int")
+    case Some(i) => println(i)
+  }
+
 
 }

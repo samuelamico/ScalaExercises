@@ -25,4 +25,5 @@ trait ListConcateRef {
   def randomSelect[T](n:Int,lista:List[T]): List[T]
   def lotto(n: Int,M: Int): List[Int]
   def isPrime(n: Int): Option[Boolean]
+  def mdc(n: Int, m: Int): Option[Int]
 }
