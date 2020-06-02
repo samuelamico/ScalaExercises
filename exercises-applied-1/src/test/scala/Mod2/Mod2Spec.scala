@@ -2,7 +2,6 @@ package Mod2
 
 
 import Complex.Complex
-import Mod2.ListConcat
 import PureFunctions.FunPure
 import org.scalatest.{FlatSpec, Matchers}
 
@@ -120,5 +119,9 @@ class Mod2Spec extends FlatSpec with Matchers{
 
     it should "Insert an Int in a  List" in {
       ListConcat.insertAt(2, 1, List(1,3,4,5)) shouldEqual(List(1, 2, 3, 4, 5))
+    }
+
+    it should "Return True for Prime" in {
+      ListConcat.isPrime(7) shouldEqual(Some(true))
     }
 }
