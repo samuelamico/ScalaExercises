@@ -287,6 +287,13 @@ object ListConcat extends ListConcateRef{
       r.nextInt(M) :: lotto(n-1,M)
     }
   }
+  //==================================================\\
 
+  // P31
+  // Define if the number is prime or not
+  def isPrime(n: Int): Option[Boolean] = n match {
+    case n  if(n <= 0) => None
+    case _ => Some(1 to (n-1) forall(x => (x%n) != 0))
+  }
 
 }

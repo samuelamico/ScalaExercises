@@ -1,4 +1,4 @@
-import Complex.Complex
+
 
 object Main extends App{
   //println(Mod2.ListConcat.concatelist("Hello",", ","World") )
@@ -38,7 +38,14 @@ object Main extends App{
 
   //println(Mod2.ListConcat.randomSelect(3,List(1,2,3,4,5,6)))
 
-  println(Mod2.ListConcat.lotto(6,49))
+  //println(Mod2.ListConcat.lotto(6,49))
+
+
+
+  val result = Mod2.ListConcat.isPrime(7) match {
+    case None => println("Number is not valid Int")
+    case Some(i) => println(i)
+  }
 
 
 }
