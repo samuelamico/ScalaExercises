@@ -41,7 +41,7 @@ object Main extends App{
   //println(Mod2.ListConcat.lotto(6,49))
 
 
-
+  /*
   val result = Mod2.ListConcat.isPrime(7) match {
     case None => println("Number is not valid Int")
     case Some(i) => println(i)
@@ -51,6 +51,6 @@ object Main extends App{
     case None => println("Number is not valid Int")
     case Some(i) => println(i)
   }
-
+   */
 
 }
