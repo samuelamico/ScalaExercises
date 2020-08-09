@@ -1,4 +1,5 @@
 import Cap1._
+import scala.collection._
 
 object Main extends App{
 
@@ -6,7 +7,7 @@ object Main extends App{
 
   def pred: Int => Boolean = x => x > 2
 
-  val result = Functions.check(Seq(1,2,3,4))(pred)
+  //val result = Functions.check(Seq(1,2,3,4))(pred)
 
   println(Functions.permutations("Chuchu"))
 
@@ -47,9 +48,30 @@ object ThreadMain extends App{
 
 
   //val thread1 = new MyThread
-  val t1 = thread({printUniqueIds(5)})
-  printUniqueIds(5)
+  //val t1 = thread({printUniqueIds(5)})
+  //printUniqueIds(5)
 
-  println("New thread Joined")
+
+  // ================ Monitors and synchronization ================
+  private val transfers = mutable.ArrayBuffer[String]()
+  def logTransfer(name: String, n: Int) = transfers.synchronized {
+    transfers += s"transfer to account '$name' = $n"
+  }
+  class Account(val name: String, var money: Int)
+  def add(account: Account, n: Int) = account.synchronized {
+    account.money += n
+    if (n > 10) logTransfer(account.name, n)
+  }
+  val jane = new Account("Jane", 100)
+  val john = new Account("John", 200)
+  val t1 = thread { add(jane, 5) }
+  val t2 = thread { add(john, 50) }
+  val t3 = thread { add(jane, 70) }
+  t1.join(); t2.join(); t3.join()
+  println(s"--- transfers ---\n$transfers")
+
+
+
+
 
 }
