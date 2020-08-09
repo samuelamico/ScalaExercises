@@ -1,10 +1,11 @@
-import scala.io.StdIn._
-import scala.annotation.tailrec
+package Cap6
 
-object Main extends App {
+import scala.io.StdIn.readLine
+
+object Cap6 extends chapter6Interface {
 
   // Exercises:
-  def matchtype[T](variable: T): String = variable match{
+  def matchType[T](variable: T): String = variable match{
     case _: String => "String"
     case _: Int => "Int"
     case _ => "Unknown"
@@ -14,30 +15,28 @@ object Main extends App {
   def exercise1(line:String) = {
     def recursiveRead(line: String, max: Int = 0, min: Int = 0): Unit = line match  {
       case "quit" => print(s"Max = $max , Min = $min")
-      case line if( matchtype(line) == "Unknown") => println("Unknown data type")
+      case line if( matchType(line) == "Unknown") => println("Unknown data type")
       case line if(line.toInt >= max) => recursiveRead(readLine(),line.toInt,min)
       case line if(line.toInt <= min) => recursiveRead(readLine(),max,line.toInt)
       case line => recursiveRead(readLine(),max,min)
     }
-    if(line == "quit" || matchtype(line) == "Unknown") println("Not start")
+    if(line == "quit" || matchType(line) == "Unknown") println("Not start")
     else recursiveRead(line,line.toInt,line.toInt)
   }
-
-  //resposta E1 ---> exercise1(readLine())
 
   //
   // E2.
   def exercise2(value: Int,exp: Int): Int = {
-    @tailrec
-    def exponential(value: Int,exp: Int): Int = exp match {
+    def exponential(value: Int,exp: Int, inital: Int): Int = exp match {
       case 1 => value
-      case _ => exponential(value*value,exp-1)
+      case n if(n%2 == 0) => exponential(value*value,exp/2,inital)
+      case n if(n%2 != 0) => inital * exponential(value*value,(exp-1)/2,inital)
     }
     if(value < 0) throw new IllegalArgumentException
-    else exponential(value,exp)
+    else if(value == 0) 1
+    else exponential(value,exp,value)
   }
 
-  //resposta E1 ---> println(s"4¨2 =  ${exercise2(4,2)}")
 
 
 }
