@@ -39,4 +39,11 @@ object Cap6 extends chapter6Interface {
 
 
 
+  //
+  // E3.
+  def exercise3(value:Int): Boolean = {
+    val rangeList = List.range(1,value)
+    rangeList.filter(x => value%x == 0).length == 1
+  }
+
 }

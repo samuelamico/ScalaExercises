@@ -14,6 +14,14 @@ class MainSpec extends FlatSpec with Matchers {
 
   an [IllegalArgumentException] should be thrownBy Cap6.exercise2(-1,2)
 
+  it should "Return no Prime" in {
+    Cap6.exercise3(4) shouldEqual(false)
+  }
+
+  it should "Return Prime" in {
+    Cap6.exercise3(7) shouldEqual(true)
+  }
+
 
 
 }
